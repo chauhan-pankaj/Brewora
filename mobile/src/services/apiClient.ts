@@ -33,11 +33,14 @@ export async function apiClient<T>(
     throw new ApiError("Unable to reach Brewora kitchen. Check your connection.");
   }
 
+  const raw = await res.text();
   let json: ApiResult<T> | null = null;
   try {
-    json = (await res.json()) as ApiResult<T>;
+    json = JSON.parse(raw) as ApiResult<T>;
   } catch {
-    throw new ApiError("Unexpected response from server.");
+    throw new ApiError(
+      `Brewora API JSON nahi de rahi (${res.status}). Brewora.API chalu hai? Swagger: http://localhost:17421/swagger`,
+    );
   }
 
   if (!res.ok || !json.success) {
