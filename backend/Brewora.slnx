@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Brewora.API/Brewora.API.csproj" />
+  <Project Path="Brewora.Application/Brewora.Application.csproj" />
+  <Project Path="Brewora.Domain/Brewora.Domain.csproj" />
+  <Project Path="Brewora.Infrastructure/Brewora.Infrastructure.csproj" />
+</Solution>

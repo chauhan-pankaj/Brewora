@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+
+# Dependencies
+**/node_modules/
+**/dist/
+**/bin/
+**/obj/
+**/.vs/
+**/*.user
+
+# Secrets
+**/.env
+!**/.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Android
+mobile/android/app/build/
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/captures/
+
+# Tooling
+*.suo
+*.sw?
+.idea

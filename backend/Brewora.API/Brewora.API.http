@@ -1,0 +1,6 @@
+@Brewora.API_HostAddress = http://localhost:5003
+
+GET {{Brewora.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

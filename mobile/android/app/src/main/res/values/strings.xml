@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Brewora Café &amp; Kitchen</string>
+    <string name="title_activity_main">Brewora Café &amp; Kitchen</string>
+    <string name="package_name">com.brewora.cafe</string>
+    <string name="custom_url_scheme">com.brewora.cafe</string>
+</resources>
