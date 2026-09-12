@@ -39,7 +39,11 @@ Default catalog and demo users live in an in-memory store so the app runs withou
 
 There is **no Entity Framework**. Repositories use `SqlConnection` / `SqlCommand` / `SqlDataReader` and stored procedures (`Microsoft.Data.SqlClient`).
 
-### Mobile web
+### Mobile web (Windows)
+
+API chalu rakho, phir `D:\Brewora\run-mobile.bat` double-click karo.
+
+Ya:
 
 ```bash
 cd mobile
