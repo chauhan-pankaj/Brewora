@@ -1,6 +1,7 @@
 using System.Text;
 using Brewora.API.Middleware;
 using Brewora.Infrastructure;
+using Brewora.Infrastructure.Data;
 using Brewora.Infrastructure.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -73,6 +74,10 @@ public class Program
             builder.Services.AddAuthorization();
 
             var app = builder.Build();
+            if (app.Configuration.GetValue<bool>("Data:UseSqlServer"))
+            {
+                DatabaseBootstrapper.EnsureCreated(app.Configuration, app.Logger);
+            }
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();
             app.UseCors("app");

@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Brewora.Infrastructure\Brewora.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\database\*.sql" Link="Sql\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
