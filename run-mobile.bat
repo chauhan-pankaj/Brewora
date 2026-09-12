@@ -30,7 +30,10 @@ node -v
 echo.
 
 cd /d "%~dp0mobile"
-if not exist ".env" copy /y ".env.example" ".env" >nul
+if not exist ".env" (
+  echo VITE_API_BASE_URL=http://localhost:17421/api> ".env"
+  echo VITE_RAZORPAY_KEY_ID=rzp_test_replace_me>> ".env"
+)
 
 echo npm install...
 call npm install

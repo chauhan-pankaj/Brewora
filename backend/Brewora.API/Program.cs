@@ -76,6 +76,11 @@ public class Program
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();
             app.UseCors("app");
+            app.Use(async (ctx, next) =>
+            {
+                Console.WriteLine($"[Brewora] {ctx.Request.Method} {ctx.Request.Path}");
+                await next();
+            });
 
             app.UseSwagger();
             app.UseSwaggerUI();
@@ -84,6 +89,7 @@ public class Program
             app.UseAuthorization();
             app.MapControllers();
             app.MapGet("/health", () => Results.Ok(new { success = true, message = "Brewora API" }));
+            app.MapGet("/api/health", () => Results.Ok(new { success = true, message = "Brewora API" }));
             app.MapGet("/", () => Results.Redirect("/swagger"));
             app.Run();
         }
